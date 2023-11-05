@@ -20,5 +20,4 @@ class Bureaucrat:
         int getGrade();
 };
 
-
 # endif
