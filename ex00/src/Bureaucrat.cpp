@@ -20,8 +20,28 @@ Bureaucrat::Bureaucrat(const std::string name):_name(name), _grade(150)
 
 Bureaucrat::Bureaucrat(const std::string name, int grade):_name(name), _grade(grade)
 {
+    if (_grade < 1)
+		throw GradeTooHighException();
+	else if (_grade > 150)
+		throw GradeTooLowException();
     std::cout << "Bureaucrat " << this->_name << " created with " << this->_grade << " grade." << std::endl;
     return;
+}
+
+void Bureaucrat::decrementGrade()
+{
+    if (this->_grade > 149)
+        throw GradeTooLowException();
+    this->_grade++;
+    std::cout << "Bureaucrat " << this->_name << " decrement to " << this->_grade << " grade." << std::endl;
+}
+
+void Bureaucrat::incrementGrade()
+{
+    if (this->_grade < 2)
+        throw GradeTooHighException();
+    this->_grade--;
+    std::cout << "Bureaucrat " << this->_name << " increment to " << this->_grade << " grade." << std::endl;
 }
 
 std::string Bureaucrat::getName() const

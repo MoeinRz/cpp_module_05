@@ -1,7 +1,7 @@
 CC 			=	c++
 CFLAGS 		=	-Wall -Wextra -Werror 
 OPTION 		=	-std=c++98
-NAME 		=	a.out
+NAME 		=	Bureaucrat
 INCLUDES	=	./include
 SRC			=	$(shell find ./src -name "main.cpp" -o -name "Bureaucrat.cpp" -type f)
 
