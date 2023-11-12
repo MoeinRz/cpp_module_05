@@ -4,7 +4,7 @@
 # include <iostream>
 # include <string>
 
-class Bureaucrat:
+class Bureaucrat
 {
     private:
         const std::string    _name;
@@ -16,8 +16,8 @@ class Bureaucrat:
         Bureaucrat(const std::string name);
         Bureaucrat(const std::string name, int grade);
 
-        std::string getName();
-        int getGrade();
+        std::string getName() const;
+        int getGrade() const;
 
     class GradeTooLowException : public std::exception
 	{
@@ -32,5 +32,7 @@ class Bureaucrat:
 	};
         
 };
+
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& src);
 
 # endif
