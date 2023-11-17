@@ -20,6 +20,7 @@ class Form
         bool getIndicate() const;
         int getSignGrade() const;
         int getExeGrade() const;
+        void beSigned(const Bureaucrat& src);
 
         class GradeTooLowException : public std::exception
         {
