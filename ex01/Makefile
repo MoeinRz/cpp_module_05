@@ -3,7 +3,7 @@ CFLAGS 		=	-Wall -Wextra -Werror
 OPTION 		=	-std=c++98
 NAME 		=	Bureaucrat
 INCLUDES	=	./include
-SRC			=	$(shell find ./src -name "main.cpp" -o -name "Bureaucrat.cpp" -type f)
+SRC			=	$(shell find ./src -name "main.cpp" -o -name "Bureaucrat.cpp" -o -name "Form.cpp" -type f)
 
 OBJECTS		=	$(SRC:.cpp=.o)
 

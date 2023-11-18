@@ -1,4 +1,5 @@
 #include "../include/Bureaucrat.hpp"
+#include "../include/Form.hpp"
 
 void leake()
 {
@@ -10,9 +11,10 @@ int main()
     std::cout << "[1]=====================================" << std::endl;
     try
     {
-        Bureaucrat moein("Moein", 100);
-        moein.decrementGrade();
-        moein.incrementGrade();
+        Form moein("Moein", false, 100, 150);
+        moein.be
+        // moein.decrementGrade();
+        // moein.incrementGrade();
     }
 	catch (std::exception & e)
 	{
@@ -22,8 +24,8 @@ int main()
     try
     {
         Bureaucrat fafa("fafa");
-        fafa.decrementGrade();
-        fafa.incrementGrade();
+        // fafa.decrementGrade();
+        // fafa.incrementGrade();
     }
 	catch (std::exception & e)
 	{
