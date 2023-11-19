@@ -9,12 +9,10 @@ void leake()
 int main()
 {
     std::cout << "[1]=====================================" << std::endl;
+    Bureaucrat moein("moein", 100);
     try
     {
-        Form moein("Moein", false, 100, 150);
-        moein.be
-        // moein.decrementGrade();
-        // moein.incrementGrade();
+        Form form("driving licence", false, 0, 1);
     }
 	catch (std::exception & e)
 	{
@@ -23,7 +21,7 @@ int main()
     std::cout << "[2]=====================================" << std::endl;
     try
     {
-        Bureaucrat fafa("fafa");
+        Form form("fafa", false, 20, 150);
         // fafa.decrementGrade();
         // fafa.incrementGrade();
     }
@@ -32,14 +30,9 @@ int main()
 		std::cerr << e.what() << std::endl;
 	}
     std::cout << "[3]=====================================" << std::endl;
-    try
-    {
-        Bureaucrat fault("fault", 0);
-    }
-	catch (std::exception & e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
+    Form form("Driving licence", false, 10, 150);
+    moein.signForm(form);
+    
     std::cout << "[END]=====================================" << std::endl;
 
 // leake();

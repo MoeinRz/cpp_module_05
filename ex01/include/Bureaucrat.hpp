@@ -4,6 +4,7 @@
 # include <iostream>
 # include <string>
 
+class Form;
 class Bureaucrat
 {
     private:
@@ -20,6 +21,7 @@ class Bureaucrat
 
         std::string getName() const;
         int getGrade() const;
+        void signForm(Form& form);
 
     class GradeTooLowException : public std::exception
 	{
