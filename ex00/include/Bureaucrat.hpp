@@ -3,7 +3,7 @@
 
 # include <iostream>
 # include <string>
-#include <cstdlib>
+# include <cstdlib>
 
 class Bureaucrat
 {
