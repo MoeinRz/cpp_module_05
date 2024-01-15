@@ -10,10 +10,14 @@ Form::Form(const std::string name, bool indicate, int signGrade, int exeGrade) :
 _name(name), _indicate(indicate), _signGrade(signGrade), _exeGrade(exeGrade)
 {
     if (_signGrade < 1 || _exeGrade < 1)
+    {
 		throw GradeTooHighException();
-	else if (_signGrade > 150 || _exeGrade > 150)
-		throw GradeTooLowException();
-    std::cout << "Form " << this->_name << "created." << std::endl;
+    }
+    else if (_signGrade > 150 || _exeGrade > 150)
+    {
+        throw GradeTooLowException();
+    }
+    std::cout << "Form " << this->_name << " created." << std::endl;
     return;
 }
 
@@ -48,7 +52,7 @@ std::ostream& operator<<(std::ostream& out, const Form& src)
     out << src.getName() << ", Form grade ";
     if (src.getSignGrade() == false)
         out << "not ";
-    out << "signed.\nsignGrade is: " << src.getSignGrade() << "\n exeGrade is: " << src.getExeGrade() << std::endl;
+    out << "signed.\nsignGrade is: " << src.getSignGrade() << "\nexeGrade is: " << src.getExeGrade() << std::endl;
     return out;
 }
 

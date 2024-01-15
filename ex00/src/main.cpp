@@ -33,6 +33,8 @@ int main()
     try
     {
         Bureaucrat fault("fault", 0);
+        fault.decrementGrade();
+        fault.incrementGrade();
     }
 	catch (std::exception & e)
 	{
