@@ -52,7 +52,7 @@ std::string Bureaucrat::getName() const
 
 int Bureaucrat::getGrade() const
 {
-    return this->_grade;
+    return _grade;
 }
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& src)
@@ -75,12 +75,12 @@ void Bureaucrat::signForm(Form& form)
 {
     try
     {
-        form.beSigned(*this);
-        std::cout << this->_name << " signed " << form.getName() << std::endl;
+        form.beSigned(_grade);
+        std::cout << getName() << " signed " << form.getName() << std::endl;
     }
     catch(const std::exception& e)
     {
-        std::cout << this->_name << " couldn't sign " << form.getName()
+        std::cout << getName() << " couldn't sign " << form.getName()
 		<< " because bureaucrat's grade is too low" << std::endl;
     }
     

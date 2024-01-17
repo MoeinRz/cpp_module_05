@@ -1,19 +1,19 @@
 #include "../include/Form.hpp"
 
-Form::Form() : _name("Default"), _indicate(false), _signGrade(150), _exeGrade(150)
+Form::Form() : _name("Default"), _isSigned(false), _gradeToSign(150), _exeGrade(150)
 {
     std::cout << "Form " << this->_name << " created." << std::endl;
     return;
 }
 
 Form::Form(const std::string name, bool indicate, int signGrade, int exeGrade) :
-_name(name), _indicate(indicate), _signGrade(signGrade), _exeGrade(exeGrade)
+_name(name), _isSigned(indicate), _gradeToSign(signGrade), _exeGrade(exeGrade)
 {
-    if (_signGrade < 1 || _exeGrade < 1)
+    if (_gradeToSign < 1 || _exeGrade < 1)
     {
 		throw GradeTooHighException();
     }
-    else if (_signGrade > 150 || _exeGrade > 150)
+    else if (_gradeToSign > 150 || _exeGrade > 150)
     {
         throw GradeTooLowException();
     }
@@ -34,12 +34,12 @@ std::string Form::getName() const
 
 bool Form::getIndicate() const
 {
-    return this->_indicate;
+    return this->_isSigned;
 }
 
 int Form::getSignGrade() const
 {
-    return this->_signGrade;
+    return this->_gradeToSign;
 }
 
 int Form::getExeGrade() const
@@ -50,7 +50,7 @@ int Form::getExeGrade() const
 std::ostream& operator<<(std::ostream& out, const Form& src)
 {
     out << src.getName() << ", Form grade ";
-    if (src.getSignGrade() == false)
+    if (src.getIndicate() == false)
         out << "not ";
     out << "signed.\nsignGrade is: " << src.getSignGrade() << "\nexeGrade is: " << src.getExeGrade() << std::endl;
     return out;
@@ -66,10 +66,10 @@ const char* Form::GradeTooLowException::what() const throw()
     return "Grade is too low.";
 }
 
-void Form::beSigned(const Bureaucrat& src)
+void Form::beSigned(int bureaucratGrade)
 {
-    if (src.getGrade() <= this->_signGrade)
-        _indicate = true;
+    if (bureaucratGrade <= _gradeToSign)
+        _isSigned = true;
     else
         throw Form::GradeTooLowException();
 }

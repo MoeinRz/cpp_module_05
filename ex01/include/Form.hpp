@@ -8,8 +8,8 @@ class Form
 {
     private:
         const std::string   _name;
-        bool                _indicate;
-        const int           _signGrade;
+        bool                _isSigned;
+        const int           _gradeToSign;
         const int           _exeGrade;
 
     public:
@@ -21,7 +21,7 @@ class Form
         bool getIndicate() const;
         int getSignGrade() const;
         int getExeGrade() const;
-        void beSigned(const Bureaucrat& src);
+        void beSigned(int bureaucratGrade);
 
         class GradeTooLowException : public std::exception
         {
