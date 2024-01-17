@@ -47,12 +47,19 @@ int Form::getExeGrade() const
     return this->_exeGrade;
 }
 
-std::ostream& operator<<(std::ostream& out, const Form& src)
-{
+// std::ostream& operator<<(std::ostream& out, const Form& src)
+// {
+//     out << src.getName() << ", Form grade ";
+//     if (src.getSignGrade() == false)
+//         out << "not ";
+//     out << "signed.\nsignGrade is: " << src.getSignGrade() << "\nexeGrade is: " << src.getExeGrade() << std::endl;
+//     return out;
+// }
+
+std::ostream& operator<<(std::ostream& out, const Form& src) {
     out << src.getName() << ", Form grade ";
-    if (src.getSignGrade() == false)
-        out << "not ";
-    out << "signed.\nsignGrade is: " << src.getSignGrade() << "\nexeGrade is: " << src.getExeGrade() << std::endl;
+    out << (src.getIndicate() ? "signed" : "not signed") << ".\n";
+    out << "signGrade is: " << src.getSignGrade() << "\nexeGrade is: " << src.getExeGrade() << std::endl;
     return out;
 }
 
@@ -68,11 +75,7 @@ const char* Form::GradeTooLowException::what() const throw()
 
 void Form::beSigned(int bureaucratGrade)
 {
-    // std::cout << "Debuge----> " << bureaucratGrade << this->_gradeToSign << std::endl;
-        
-    // if (src.getGrade() <= this->_gradeToSign)
-    //     _isSigned = true;
-    if (bureaucratGrade <= this->_gradeToSign)
+    if (bureaucratGrade <= _gradeToSign)
         _isSigned = true;
     else
         throw Form::GradeTooLowException();
