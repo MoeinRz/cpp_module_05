@@ -47,19 +47,12 @@ int Form::getExeGrade() const
     return this->_exeGrade;
 }
 
-// std::ostream& operator<<(std::ostream& out, const Form& src)
-// {
-//     out << src.getName() << ", Form grade ";
-//     if (src.getSignGrade() == false)
-//         out << "not ";
-//     out << "signed.\nsignGrade is: " << src.getSignGrade() << "\nexeGrade is: " << src.getExeGrade() << std::endl;
-//     return out;
-// }
-
-std::ostream& operator<<(std::ostream& out, const Form& src) {
+std::ostream& operator<<(std::ostream& out, const Form& src)
+{
     out << src.getName() << ", Form grade ";
-    out << (src.getIndicate() ? "signed" : "not signed") << ".\n";
-    out << "signGrade is: " << src.getSignGrade() << "\nexeGrade is: " << src.getExeGrade() << std::endl;
+    if (src.getIndicate() == false)
+        out << "not ";
+    out << "signed.\nsignGrade is: " << src.getSignGrade() << "\nexeGrade is: " << src.getExeGrade() << std::endl;
     return out;
 }
 
