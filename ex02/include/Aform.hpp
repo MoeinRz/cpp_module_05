@@ -1,10 +1,10 @@
-# ifndef FORM_HPP
-# define FORM_HPP
+# ifndef AFORM_HPP
+# define AFORM_HPP
 
 # include "Bureaucrat.hpp"
 
 class Bureaucrat;
-class Form
+class Aform
 {
     private:
         const std::string   _name;
@@ -13,9 +13,9 @@ class Form
         const int           _exeGrade;
 
     public:
-        Form();
-        ~Form();
-        Form(const std::string name, bool indicate, int signGrade, int exeGrade);
+        Aform();
+        ~Aform();
+        Aform(const std::string name, bool indicate, int signGrade, int exeGrade);
         
         std::string getName() const;
         bool getIndicate() const;
@@ -37,6 +37,6 @@ class Form
 
 };
 
-std::ostream& operator<<(std::ostream& out, const Form& src);
+std::ostream& operator<<(std::ostream& out, const Aform& src);
 
 # endif

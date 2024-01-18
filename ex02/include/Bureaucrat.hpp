@@ -5,7 +5,7 @@
 # include <string>
 # include <cstdlib>
 
-class Form;
+class Aform;
 class Bureaucrat
 {
     private:
@@ -22,7 +22,7 @@ class Bureaucrat
 
         std::string getName() const;
         int getGrade() const;
-        void signForm(Form& form);
+        void signForm(Aform& form);
 
     class GradeTooLowException : public std::exception
 	{
