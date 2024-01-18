@@ -1,5 +1,5 @@
 #include "../include/Bureaucrat.hpp"
-#include "../include/Aform.hpp"
+#include "../include/AForm.hpp"
 
 void leake()
 {
@@ -12,7 +12,7 @@ int main()
     try
     {
         Bureaucrat moein("Moein", 80);
-        Aform form("CPP_Module_05", false, 80, 50);
+        AForm form("CPP_Module_05", false, 80, 50);
 
         std::cout << "Original Form: " << form << std::endl;
         moein.signForm(form);
@@ -28,7 +28,7 @@ int main()
     try
     {
         Bureaucrat moein("Moein", 80);
-        Aform form("CPP_Module_05", false, 10, 50);
+        AForm form("CPP_Module_05", false, 10, 50);
 
         std::cout << "Original Form: " << form << std::endl;
         moein.signForm(form);
@@ -43,7 +43,7 @@ int main()
     std::cout << "\n[2]=====================================\n" << std::endl;
     try
     {
-        Aform fafa("fafa", false, 0, 1);
+        AForm fafa("fafa", false, 0, 1);
     }
 	catch (std::exception & e)
 	{
@@ -53,7 +53,7 @@ int main()
     std::cout << "\n[3]=====================================\n" << std::endl;
     try
     {
-        Aform fafa("fafa", false, 2, 151);
+        AForm fafa("fafa", false, 2, 151);
     }
 	catch (std::exception & e)
 	{

@@ -4,7 +4,7 @@
 # include "Bureaucrat.hpp"
 
 class Bureaucrat;
-class Aform
+class AForm
 {
     private:
         const std::string   _name;
@@ -13,9 +13,9 @@ class Aform
         const int           _exeGrade;
 
     public:
-        Aform();
-        ~Aform();
-        Aform(const std::string name, bool indicate, int signGrade, int exeGrade);
+        AForm();
+        ~AForm();
+        AForm(const std::string name, bool indicate, int signGrade, int exeGrade);
         
         std::string getName() const;
         bool getIndicate() const;
@@ -37,6 +37,6 @@ class Aform
 
 };
 
-std::ostream& operator<<(std::ostream& out, const Aform& src);
+std::ostream& operator<<(std::ostream& out, const AForm& src);
 
 # endif

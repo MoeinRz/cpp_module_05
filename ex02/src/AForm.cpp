@@ -1,12 +1,12 @@
-#include "../include/Aform.hpp"
+#include "../include/AForm.hpp"
 
-Aform::Aform() : _name("Default"), _isSigned(false), _gradeToSign(150), _exeGrade(150)
+AForm::AForm() : _name("Default"), _isSigned(false), _gradeToSign(150), _exeGrade(150)
 {
     std::cout << "Form " << this->_name << " created." << std::endl;
     return;
 }
 
-Aform::Aform(const std::string name, bool indicate, int signGrade, int exeGrade) :
+AForm::AForm(const std::string name, bool indicate, int signGrade, int exeGrade) :
 _name(name), _isSigned(indicate), _gradeToSign(signGrade), _exeGrade(exeGrade)
 {
     if (_gradeToSign < 1 || _exeGrade < 1)
@@ -21,33 +21,33 @@ _name(name), _isSigned(indicate), _gradeToSign(signGrade), _exeGrade(exeGrade)
     return;
 }
 
-Aform::~Aform()
+AForm::~AForm()
 {
     std::cout << "Form " << this->_name << " destrucred." << std::endl;
     return; 
 }
 
-std::string Aform::getName() const
+std::string AForm::getName() const
 {
     return this->_name;
 }
 
-bool Aform::getIndicate() const
+bool AForm::getIndicate() const
 {
     return this->_isSigned;
 }
 
-int Aform::getSignGrade() const
+int AForm::getSignGrade() const
 {
     return this->_gradeToSign;
 }
 
-int Aform::getExeGrade() const
+int AForm::getExeGrade() const
 {
     return this->_exeGrade;
 }
 
-std::ostream& operator<<(std::ostream& out, const Aform& src)
+std::ostream& operator<<(std::ostream& out, const AForm& src)
 {
     out << src.getName() << ", Form grade ";
     if (src.getIndicate() == false)
@@ -56,20 +56,20 @@ std::ostream& operator<<(std::ostream& out, const Aform& src)
     return out;
 }
 
-const char* Aform::GradeTooHighException::what() const throw()
+const char* AForm::GradeTooHighException::what() const throw()
 {
     return "Grade is too high.";
 }
 
-const char* Aform::GradeTooLowException::what() const throw()
+const char* AForm::GradeTooLowException::what() const throw()
 {
     return "Grade is too low.";
 }
 
-void Aform::beSigned(int bureaucratGrade)
+void AForm::beSigned(int bureaucratGrade)
 {
     if (bureaucratGrade <= _gradeToSign)
         _isSigned = true;
     else
-        throw Aform::GradeTooLowException();
+        throw AForm::GradeTooLowException();
 }
