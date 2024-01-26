@@ -18,21 +18,23 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 void ShrubberyCreationForm::execute(const Bureaucrat& executor) const
 {
-        if (!getIndicate() || executor.getGrade() > getExeGrade())
-        {
-            throw GradeTooLowException();
-        }
-        std::ofstream file(_target + "_shrubbery");
-        if (file.is_open())
-        {
-            file << "ASCII trees inside it." << std::endl;
-            file.close();
-            std::cout << "ShrubberyCreationForm executed successfully by " << executor.getName() << std::endl;
-        }
-        else
-        {
-            std::cerr << "Failed to create shrubbery for " << _target << std::endl;
-        }
+    if (!getIndicate() || executor.getGrade() > getExeGrade())
+    {
+        throw GradeTooLowException();
+    }
+    // Convert std::string to const char*
+    const char* filename = (_target + "_shrubbery").c_str();
+    std::ofstream file(filename); // Use const char* filename
+    if (file.is_open())
+    {
+        file << "ASCII trees inside it." << std::endl;
+        file.close();
+        std::cout << "ShrubberyCreationForm executed successfully by " << executor.getName() << std::endl;
+    }
+    else
+    {
+        std::cerr << "Failed to create shrubbery for " << _target << std::endl;
+    }
 }
 
 std::ostream& operator<<(std::ostream& out, const ShrubberyCreationForm& src)
