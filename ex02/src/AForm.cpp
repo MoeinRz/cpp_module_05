@@ -21,6 +21,12 @@ _name(name), _isSigned(indicate), _gradeToSign(signGrade), _exeGrade(exeGrade)
     return;
 }
 
+AForm::AForm(const AForm& src) : _name(src._name), _isSigned(src._isSigned),
+  _gradeToSign(src._gradeToSign), _exeGrade(src._exeGrade)
+{
+
+}
+
 AForm::~AForm()
 {
     std::cout << "Form " << this->_name << " destrucred." << std::endl;
