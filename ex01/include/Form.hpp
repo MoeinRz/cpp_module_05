@@ -15,6 +15,7 @@ class Form
     public:
         Form();
         ~Form();
+        Form(const Form &src);
         Form(const std::string name, bool indicate, int signGrade, int exeGrade);
         
         std::string getName() const;
