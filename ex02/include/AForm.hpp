@@ -24,6 +24,8 @@ class AForm
         int getExeGrade() const;
         void beSigned(int bureaucratGrade);
 
+        AForm& operator=(const AForm &src);
+
         class GradeTooLowException : public std::exception
         {
         public:
@@ -36,6 +38,11 @@ class AForm
             virtual const char *what() const throw();
         };
 
+        class FormNotSignedException : public std::exception
+        {
+        public:
+            virtual const char *what() const throw();
+        };
 };
 
 std::ostream& operator<<(std::ostream& out, const AForm& src);

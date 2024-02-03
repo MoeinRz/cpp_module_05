@@ -7,7 +7,7 @@
 class PresidentialPardonForm : public AForm
 {
     private:
-        const std::string _target;
+        std::string _target;
     
     public:
         PresidentialPardonForm();
@@ -16,8 +16,8 @@ class PresidentialPardonForm : public AForm
         ~PresidentialPardonForm();
         PresidentialPardonForm(const std::string name);
         void execute(const Bureaucrat& executor) const;
-};
 
-std::ostream& operator<<(std::ostream& out, const PresidentialPardonForm& src);
+        PresidentialPardonForm& operator=(PresidentialPardonForm const &src);
+};
 
 #endif

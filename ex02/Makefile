@@ -4,7 +4,10 @@ CFLAGS 		=	-Wall
 OPTION 		=	-std=c++98
 NAME 		=	Bureaucrat
 INCLUDES	=	./include
-SRC			=	$(shell find ./src -name "main.cpp" -o -name "Bureaucrat.cpp" -o -name "AForm.cpp" -o -name "ShrubberyCreationForm.cpp" -type f)
+SRC			=	$(shell find ./src -name "main.cpp" -o -name "Bureaucrat.cpp" \
+				-o -name "AForm.cpp" -o -name "ShrubberyCreationForm.cpp" \
+				-o -name "PresidentialPardonForm.cpp" \
+				-o -name "RobotomyRequestForm.cpp" -type f)
 
 OBJECTS		=	$(SRC:.cpp=.o)
 

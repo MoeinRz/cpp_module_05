@@ -79,3 +79,17 @@ void AForm::beSigned(int bureaucratGrade)
     else
         throw AForm::GradeTooLowException();
 }
+
+const char* AForm::FormNotSignedException::what() const throw()
+{
+    return "Form is not signed.";
+}
+
+AForm& AForm::operator=(const AForm& src)
+{
+    if (this != &src)
+    {
+        _isSigned = src._isSigned;
+    }
+    return *this;
+}
