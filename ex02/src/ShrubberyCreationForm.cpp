@@ -11,6 +11,11 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &src) :
     return;
 }
 
+// ShrubberyCreationForm::ShrubberyCreationForm(const std::string name) : AForm(name, false, 145, 137), _target("target")
+// {
+//     return;
+// }
+
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
     return;

@@ -6,6 +6,8 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string& target) : AForm("Rob
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &src) : AForm(src), _target(src._target) {}
 
+// RobotomyRequestForm::RobotomyRequestForm(const std::string name) : AForm(name, false, 72, 45), _target("default") {}
+
 RobotomyRequestForm::~RobotomyRequestForm() {}
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const &src) {

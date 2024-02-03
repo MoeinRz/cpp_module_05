@@ -6,6 +6,8 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string& target) : AFor
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &src) : AForm(src), _target(src._target) {}
 
+// PresidentialPardonForm::PresidentialPardonForm(const std::string name) : AForm(name, false, 25, 5), _target("default") {}
+
 PresidentialPardonForm::~PresidentialPardonForm() {}
 
 void PresidentialPardonForm::execute(const Bureaucrat& executor) const {
