@@ -11,92 +11,45 @@ void leake()
 
 int main()
 {
-    PresidentialPardonForm presidentialForm("Marx");
-    RobotomyRequestForm robotomyForm("Ehab");
-    ShrubberyCreationForm shrubberyForm("Deyan");
-    Bureaucrat kaya("Kaya", 1);
-    // Try to execute the forms before they are signed
+    try {
+        // Create bureaucrats
+        Bureaucrat moein("Moein", 100);
+        Bureaucrat john("John", 5);
 
-    kaya.executeForm(presidentialForm);
+        // Create forms
+        ShrubberyCreationForm shrubberyForm("home");
+        RobotomyRequestForm robotomyForm("John Doe");
+        PresidentialPardonForm pardonForm("Alice");
 
-    Bureaucrat valentin("Valentin", 1);
-    valentin.signForm(presidentialForm);
-    valentin.executeForm(presidentialForm);
-    
-    kaya.signForm(robotomyForm);
-    kaya.executeForm(robotomyForm);
+        // Display original forms
+        std::cout << BLUE << "Original Shrubbery Form: " << shrubberyForm << RESET << std::endl;
+        std::cout << BLUE << "Original Robotomy Form: " << robotomyForm << RESET << std::endl;
+        std::cout << BLUE << "Original Pardon Form: " << pardonForm << RESET << std::endl;
 
-    // Sign the forms
-    Bureaucrat enes("Enes", 50);
-    enes.signForm(presidentialForm);
-    enes.signForm(robotomyForm);
-    enes.signForm(shrubberyForm);
-    enes.executeForm(presidentialForm);
-    enes.executeForm(robotomyForm);
-    enes.executeForm(shrubberyForm);
+        // Sign forms
+        moein.signForm(shrubberyForm);
+        moein.signForm(robotomyForm);
+        john.signForm(pardonForm);
 
-    return 0;
+        // Display signed forms
+        std::cout << GREEN << "Signed Shrubbery Form: " << shrubberyForm << RESET << std::endl;
+        std::cout << GREEN << "Signed Robotomy Form: " << robotomyForm << RESET << std::endl;
+        std::cout << GREEN << "Signed Pardon Form: " << pardonForm << RESET << std::endl;
+
+        // Execute forms
+        std::cout << YELLOW << "\nExecuting Shrubbery Form...\n" << RESET;
+        moein.executeForm(shrubberyForm);
+
+        std::cout << YELLOW << "\nExecuting Robotomy Form...\n" << RESET;
+        moein.executeForm(robotomyForm);
+
+        std::cout << YELLOW << "\nExecuting Pardon Form...\n" << RESET;
+        john.executeForm(pardonForm);
+
+    } catch (const std::exception& e) {
+        std::cerr << RED << "Exception: " << e.what() << RESET << std::endl;
+    }
+
+// leake();
+return 0;
 }
-    
-
-// int main()
-// {
-//     std::cout << "\n[0]=====================================\n" << std::endl;
-//     try
-//     {
-//         Bureaucrat moein("Moein", 80);
-//         AForm form("CPP_Module_05", false, 80, 50);
-
-//         std::cout << "Original Form: " << form << std::endl;
-//         moein.signForm(form);
-//         std::cout << "Updated Form: " << form << std::endl;
-//     }
-//     catch (const std::exception& e)
-//     {
-//         std::cerr << "Exception: " << e.what() << std::endl;
-//     }
-
-
-//     std::cout << "\n[1]=====================================\n" << std::endl;
-//     ShrubberyCreationForm shrubberyForm();
-//     try
-//     {
-//         Bureaucrat moein("Moein", 80);
-//         AForm form("CPP_Module_05", false, 10, 50);
-
-//         std::cout << "Original Form: " << form << std::endl;
-//         moein.signForm(form);
-//         std::cout << "Updated Form: " << form << std::endl;
-
-//     }
-//     catch (const std::exception& e)
-//     {
-//         std::cerr << "Exception: " << e.what() << std::endl;
-//     }
-
-
-//     std::cout << "\n[2]=====================================\n" << std::endl;
-//     try
-//     {
-//         AForm fafa("fafa", false, 0, 1);
-//     }
-// 	catch (std::exception & e)
-// 	{
-// 		std::cerr << e.what() << std::endl;
-// 	}
-    
-//     std::cout << "\n[3]=====================================\n" << std::endl;
-//     try
-//     {
-//         AForm fafa("fafa", false, 2, 151);
-//     }
-// 	catch (std::exception & e)
-// 	{
-// 		std::cerr << e.what() << std::endl;
-// 	}
-
-//     std::cout << "\n[END]=====================================" << std::endl;
-
-// // leake();
-// return 0;
-// }

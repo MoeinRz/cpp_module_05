@@ -1,6 +1,5 @@
 CC 			=	c++
-CFLAGS 		=	-Wall
-#  -Wextra -Werror 
+CFLAGS 		=	-Wall -Wextra -Werror 
 OPTION 		=	-std=c++98
 NAME 		=	Bureaucrat
 INCLUDES	=	./include

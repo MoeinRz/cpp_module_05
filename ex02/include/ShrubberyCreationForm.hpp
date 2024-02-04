@@ -7,15 +7,15 @@
 class ShrubberyCreationForm : public AForm
 {
     private:
-        const std::string _target;
+        std::string _target;
     
     public:
         ShrubberyCreationForm();
-        ShrubberyCreationForm(const std::string& _target);
+        ShrubberyCreationForm(std::string target);
         ShrubberyCreationForm(ShrubberyCreationForm const &src);
         ~ShrubberyCreationForm();
-        // ShrubberyCreationForm(const std::string name);
         void execute(const Bureaucrat& executor) const;
+        ShrubberyCreationForm& operator=(ShrubberyCreationForm const &src);
 };
 
 std::ostream& operator<<(std::ostream& out, const ShrubberyCreationForm& src);

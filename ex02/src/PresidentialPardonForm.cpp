@@ -1,16 +1,30 @@
 #include "../include/PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", false, 25, 5), _target("default") {}
+PresidentialPardonForm::PresidentialPardonForm() :
+AForm("PresidentialPardonForm", false, 25, 5), _target("default")
+{
+    return;
+}
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string& target) : AForm("PresidentialPardonForm", false, 25, 5), _target(target) {}
+PresidentialPardonForm::PresidentialPardonForm(const std::string& target) :
+AForm("PresidentialPardonForm", false, 25, 5), _target(target) 
+{
+    return;
+}
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &src) : AForm(src), _target(src._target) {}
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &src) :
+AForm(src), _target(src._target)
+{
+    return;
+}
 
-// PresidentialPardonForm::PresidentialPardonForm(const std::string name) : AForm(name, false, 25, 5), _target("default") {}
+PresidentialPardonForm::~PresidentialPardonForm()
+{
+    return;
+}
 
-PresidentialPardonForm::~PresidentialPardonForm() {}
-
-void PresidentialPardonForm::execute(const Bureaucrat& executor) const {
+void PresidentialPardonForm::execute(const Bureaucrat& executor) const
+{
     if (!getIndicate()) {
         throw FormNotSignedException();
     }
@@ -20,7 +34,8 @@ void PresidentialPardonForm::execute(const Bureaucrat& executor) const {
     std::cout << _target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 }
 
-PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm const &src) {
+PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm const &src)
+{
     if (this != &src) {
         AForm::operator=(src);
         _target = src._target;

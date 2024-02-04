@@ -5,6 +5,12 @@
 # include <string>
 # include <cstdlib>
 
+#define RESET   "\033[0m"
+#define RED     "\033[31m"
+#define GREEN   "\033[32m"
+#define YELLOW  "\033[33m"
+#define BLUE    "\033[34m"
+
 class AForm;
 class Bureaucrat
 {
@@ -23,6 +29,7 @@ class Bureaucrat
         std::string getName() const;
         int getGrade() const;
         void signForm(AForm& form);
+        void executeForm(AForm const & form);
 
     class GradeTooLowException : public std::exception
 	{

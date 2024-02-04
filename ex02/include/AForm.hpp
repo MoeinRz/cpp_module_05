@@ -23,6 +23,7 @@ class AForm
         int getSignGrade() const;
         int getExeGrade() const;
         void beSigned(int bureaucratGrade);
+        virtual void execute(const Bureaucrat& executor) const=0;
 
         AForm& operator=(const AForm &src);
 
