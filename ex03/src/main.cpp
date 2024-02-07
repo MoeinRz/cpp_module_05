@@ -46,6 +46,8 @@ int main()
         std::cout << YELLOW << "\nExecuting Pardon Form...\n" << RESET;
         john.executeForm(pardonForm);
 
+        
+
     } catch (const std::exception& e) {
         std::cerr << RED << "Exception: " << e.what() << RESET << std::endl;
     }
