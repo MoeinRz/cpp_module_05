@@ -14,7 +14,7 @@ class AForm
 
     public:
         AForm();
-        ~AForm();
+        virtual ~AForm();
         AForm(const AForm &src);
         AForm(const std::string name, bool indicate, int signGrade, int exeGrade);
         

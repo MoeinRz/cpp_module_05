@@ -3,6 +3,7 @@
 #include "../include/ShrubberyCreationForm.hpp"
 #include "../include/RobotomyRequestForm.hpp"
 #include "../include/PresidentialPardonForm.hpp"
+#include "../include/Intern.hpp"
 
 void leake()
 {
@@ -11,45 +12,33 @@ void leake()
 
 int main()
 {
-    try {
-        // Create bureaucrats
-        Bureaucrat moein("Moein", 100);
-        Bureaucrat john("John", 5);
+    Intern someRandomIntern;
 
-        // Create forms
-        ShrubberyCreationForm shrubberyForm("home");
-        RobotomyRequestForm robotomyForm("John Doe");
-        PresidentialPardonForm pardonForm("Alice");
+    // Test making a ShrubberyCreationForm
+    AForm* scf = someRandomIntern.makeForm("shrubbery creation", "Garden");
+    if (scf != NULL) {
+        Bureaucrat bureaucrat("Tom", 100);
+        bureaucrat.signForm(*scf);
+        bureaucrat.executeForm(*scf);
+        delete scf;
+    }
 
-        // Display original forms
-        std::cout << BLUE << "Original Shrubbery Form: " << shrubberyForm << RESET << std::endl;
-        std::cout << BLUE << "Original Robotomy Form: " << robotomyForm << RESET << std::endl;
-        std::cout << BLUE << "Original Pardon Form: " << pardonForm << RESET << std::endl;
+    // Test making a RobotomyRequestForm
+    AForm* rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+    if (rrf != NULL) {
+        Bureaucrat bureaucrat("Jerry", 70);
+        bureaucrat.signForm(*rrf);
+        bureaucrat.executeForm(*rrf);
+        delete rrf;
+    }
 
-        // Sign forms
-        moein.signForm(shrubberyForm);
-        moein.signForm(robotomyForm);
-        john.signForm(pardonForm);
-
-        // Display signed forms
-        std::cout << GREEN << "Signed Shrubbery Form: " << shrubberyForm << RESET << std::endl;
-        std::cout << GREEN << "Signed Robotomy Form: " << robotomyForm << RESET << std::endl;
-        std::cout << GREEN << "Signed Pardon Form: " << pardonForm << RESET << std::endl;
-
-        // Execute forms
-        std::cout << YELLOW << "\nExecuting Shrubbery Form...\n" << RESET;
-        moein.executeForm(shrubberyForm);
-
-        std::cout << YELLOW << "\nExecuting Robotomy Form...\n" << RESET;
-        moein.executeForm(robotomyForm);
-
-        std::cout << YELLOW << "\nExecuting Pardon Form...\n" << RESET;
-        john.executeForm(pardonForm);
-
-        
-
-    } catch (const std::exception& e) {
-        std::cerr << RED << "Exception: " << e.what() << RESET << std::endl;
+    // Test making a PresidentialPardonForm
+    AForm* ppf = someRandomIntern.makeForm("presidential pardon", "Alice");
+    if (ppf != NULL) {
+        Bureaucrat bureaucrat("Mike", 20);
+        bureaucrat.signForm(*ppf);
+        bureaucrat.executeForm(*ppf);
+        delete ppf;
     }
 
 // leake();
