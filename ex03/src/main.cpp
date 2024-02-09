@@ -14,7 +14,6 @@ int main()
 {
     Intern someRandomIntern;
 
-    // Test making a ShrubberyCreationForm
     AForm* scf = someRandomIntern.makeForm("shrubbery creation", "Garden");
     if (scf != NULL) {
         Bureaucrat bureaucrat("Tom", 100);
@@ -23,7 +22,6 @@ int main()
         delete scf;
     }
 
-    // Test making a RobotomyRequestForm
     AForm* rrf = someRandomIntern.makeForm("robotomy request", "Bender");
     if (rrf != NULL) {
         Bureaucrat bureaucrat("Jerry", 70);
@@ -32,7 +30,6 @@ int main()
         delete rrf;
     }
 
-    // Test making a PresidentialPardonForm
     AForm* ppf = someRandomIntern.makeForm("presidential pardon", "Alice");
     if (ppf != NULL) {
         Bureaucrat bureaucrat("Mike", 20);
